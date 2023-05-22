@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Deck SLider */
+/* Styling the thumb */
+
+#deck_level[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Hides the default appearance */
+  appearance: none;
+  width: 80px; /* Set the width of the thumb */
+  height: 30px; /* Set the height of the thumb */
+  background-color: #ddd; /* Set the background color of the thumb */
+  border-radius: 50px; /* Make it circular */
+  cursor: pointer; /* Change the cursor on hover */
+  margin-top: -15px;
+}
+
+/* Styling the active track */
+#deck_level[type="range"]::-webkit-slider-runnable-track {
+  height: 1px; /* Set the height of the track */
+}
+
+/* Circle progressbar */
+.circle_background {
+  fill: none;
+  stroke: none;
+}
+.circle_progress {
+  fill: none;
+  stroke: #93f000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

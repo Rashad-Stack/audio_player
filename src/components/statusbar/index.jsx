@@ -4,9 +4,9 @@ import Title from "./title";
 
 export default function Statusbar() {
   return (
-    <div className="mt-5 bg-dark flex items-center">
-      <Timer />
-      <Title />
+    <div className="flex items-center mt-5 bg-dark">
+      <Timer remainTime="03:35" />
+      <Title title="SZA-Kill Bill" />
     </div>
   );
 }
