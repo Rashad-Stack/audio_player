@@ -5,6 +5,7 @@ import Album from "./album";
 import Settings from "./settings";
 import TabButton from "./tabButton";
 import Playlist from "./playlist";
+import VoiceTrack from "../voiceTrack";
 
 export default function Body() {
   const [active, setActive] = useState(1);
@@ -36,7 +37,7 @@ export default function Body() {
         <div className="overflow-y-auto h-96 scrollbar-none">
           {active === 1 && <Playlist />}
           {active === 2 && <div> Sound Mall</div>}
-          {active === 3 && <div> Video Track</div>}
+          {active === 3 && <VoiceTrack />}
         </div>
       </div>
       <Settings />
