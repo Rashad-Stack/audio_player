@@ -7,7 +7,7 @@ export default function Playlist() {
       <List />
       <List />
       <List />
-      <List />
+      <List active={true} />
       <List />
       <List />
       <List />

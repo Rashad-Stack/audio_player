@@ -8,7 +8,7 @@ export default function DeckLevel() {
   };
 
   const trackStyle = {
-    background: `linear-gradient(to right, #93f000 ${value}%, #ccc ${value}%)`,
+    background: `linear-gradient(to right, #93f000 ${value}%, #555 ${value}%)`,
   };
 
   return (
@@ -22,7 +22,7 @@ export default function DeckLevel() {
           onChange={handleChange}
           style={trackStyle}
           id="deck_level"
-          className="appearance-none h-0.5 bg-slate-500 w-full"
+          className="appearance-none h-0.5 w-full"
         />
       </div>
       <div className="absolute right-[40%] text-slate-500 -bottom-[230px] text-center">
