@@ -12,7 +12,7 @@ export default function DeckLevel() {
   };
 
   return (
-    <div className="absolute -bottom-[150px] flex flex-col">
+    <div className="absolute top-[350px] flex flex-col">
       <div className="w-[400px] -rotate-90 h-full bg-pitch-black flex items-center p-4 rounded-full">
         <input
           type="range"
