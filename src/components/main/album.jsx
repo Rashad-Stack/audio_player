@@ -20,7 +20,7 @@ export default function Album() {
   }, []);
 
   const isMobile = screenWidth < 768 ? true : false;
-  const isTab = screenWidth < 1024 ? true : false;
+  const isTab = screenWidth < 1000 ? true : false;
 
   return (
     <div className="flex flex-wrap items-start justify-center gap-1 mt-10">

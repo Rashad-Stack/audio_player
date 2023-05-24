@@ -2,9 +2,8 @@ export default function CircleProgressbar({
   percentage,
   circleWidth,
   children,
-  isMobile,
 }) {
-  const radius = isMobile ? 33 : 65;
+  const radius = 65;
 
   const dashArray = radius * Math.PI * 2;
   const dashOffset = dashArray - (dashArray * percentage) / 100;

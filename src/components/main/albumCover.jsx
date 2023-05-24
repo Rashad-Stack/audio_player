@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import CircleProgressbar from "./cicleProgressbar";
 
-export default function AlbumCover({ percentage, time, music, isMobile }) {
+export default function AlbumCover({ percentage, time, music }) {
   const [isDeleting, setIsDeleting] = useState(false);
 
   return (
     <div>
-      <CircleProgressbar
-        percentage={percentage}
-        circleWidth={isMobile ? "100" : "150"}
-        isMobile={isMobile}>
-        <div className="relative w-16 h-16 overflow-hidden rounded-full cursor-pointer md:w-32 md:h-32">
+      <CircleProgressbar percentage={percentage} circleWidth="150">
+        <div className="relative w-32 h-32 overflow-hidden rounded-full cursor-pointer">
           <img
             src={music.albumArt}
             alt={music.album}
