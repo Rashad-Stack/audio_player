@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import CircleProgressbar from "./cicleProgressbar";
 
-export default function AlbumCover({ percentage, time }) {
+export default function AlbumCover({ percentage, time, music }) {
   const [isDeleting, setIsDeleting] = useState(false);
+
   return (
     <div>
       <CircleProgressbar percentage={percentage} circleWidth="150">
         <div className="relative w-32 h-32 overflow-hidden rounded-full cursor-pointer">
           <img
-            src="https://d1ozqqh7vh3ykm.cloudfront.net/2023/21/112731180/temp20230522-7424-bts3wj.png"
-            alt="album image"
+            src={music.albumArt}
+            alt={music.album}
             className="object-cover"
           />
           <input type="range" className="rounded-range"></input>
@@ -40,7 +41,7 @@ export default function AlbumCover({ percentage, time }) {
           </div>
         </div>
       </CircleProgressbar>
-      <h6 className="text-center text-gray-500">Station ID</h6>
+      <h6 className="text-center text-gray-500">{music.album}</h6>
     </div>
   );
 }
