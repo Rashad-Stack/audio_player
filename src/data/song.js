@@ -3,7 +3,15 @@ export const musicList = [
     album: "Station ID",
     albumArt:
       "https://img.freepik.com/premium-psd/dj-night-party-event-banner-template_265396-53.jpg?size=626&ext=jpg",
-    songs: [],
+    songs: [
+      { id: 1, song: "“See You Again” by Wiz Knalifa ft. Charlie Puth" },
+      { id: 2, song: "“Dark Horse” by Katy Perry ft. Juicy J" },
+      { id: 3, song: "“Uptown Funk” by Mark Ronson ft. Bruno Mars" },
+      { id: 4, song: "“Blank Space” by Taylor Swift" },
+      { id: 5, song: "“Lean On” by Major Lazer & Dj Shake ft. Mo" },
+      { id: 6, song: "“Hello” by Adele" },
+      { id: 7, song: "“Sugar” by Maroon 5" },
+    ],
   },
   {
     album: "Music Bed 34",

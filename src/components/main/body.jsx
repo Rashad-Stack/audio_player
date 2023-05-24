@@ -10,7 +10,7 @@ import VoiceTrack from "../voiceTrack";
 export default function Body() {
   const [active, setActive] = useState(1);
   return (
-    <div className="grid grid-cols-[200px_1fr_200px] place-content-start">
+    <div className="grid grid-cols-[100px_1fr_100px] md:grid-cols-[200px_1fr_200px] place-content-start">
       <div className="relative flex flex-col items-center justify-between h-full mt-20">
         <Button />
         <DeckLevel />
