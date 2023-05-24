@@ -8,8 +8,6 @@ export default function Playlist() {
   const { currentAlbum, currentSong, setCurrentSong } =
     useContext(PlayerContext);
 
-  console.log(currentAlbum);
-
   const songs = musicList[currentAlbum]?.songs || [];
 
   return (
