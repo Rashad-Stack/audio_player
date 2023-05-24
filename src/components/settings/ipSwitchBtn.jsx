@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function IpSwitchBtn() {
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
 
   const toggleSwitch = () => {
     setIsOn(!isOn);

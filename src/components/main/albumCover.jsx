@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import CircleProgressbar from "./cicleProgressbar";
 
 export default function AlbumCover({ percentage, time }) {
+  const [isDeleting, setIsDeleting] = useState(false);
   return (
     <div>
       <CircleProgressbar percentage={percentage} circleWidth="150">
-        <div className="relative w-32 h-32 overflow-hidden rounded-full cursor-pointer group">
+        <div className="relative w-32 h-32 overflow-hidden rounded-full cursor-pointer">
           <img
             src="https://d1ozqqh7vh3ykm.cloudfront.net/2023/21/112731180/temp20230522-7424-bts3wj.png"
             alt="album image"
             className="object-cover"
           />
           <input type="range" className="rounded-range"></input>
-          <div className="absolute bottom-0 left-0 right-0 flex flex-col justify-between w-full py-2 text-center text-gray-400 transition-all h-1/3 bg-black/60 group-hover:h-full">
-            <div className="hidden w-full h-full group-hover:grid place-content-center">
+          <div
+            className={`absolute bottom-0 left-0 right-0 flex flex-col justify-between w-full py-2 text-center text-gray-400 transition-all bg-black/60 ${
+              isDeleting ? "h-full" : "h-1/3"
+            }`}
+            onClick={() => setIsDeleting(!isDeleting)}>
+            <div
+              className={` w-full h-full place-content-center ${
+                isDeleting ? "grid" : "hidden"
+              }`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
