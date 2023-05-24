@@ -35,10 +35,10 @@ export default function UploadPanel() {
         <div className="border-t border-gray-700">
           <ul>
             <List title="Random Fact" />
-            <List title="Random Fact" />
-            <List title="Random Fact" />
-            <List title="Random Fact" />
-            <List title="Random Fact" />
+            <List title="Music break" />
+            <List title="Generic break" />
+            <List title="Competitions" />
+            <List title="Today in history" />
           </ul>
         </div>
       </div>
