@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 
-export default function List({ active, isEditing, setIsEditing }) {
+export default function List({ active, setIsEditing, song, setPlayingId }) {
   const [showActionBtn, setShowActionBtn] = useState(false);
-
-  const [isPressed, setIsPressed] = useState(false);
 
   let pressTimer;
 
   const handleMouseDown = () => {
     pressTimer = setTimeout(() => {
-      setIsPressed(true);
       setIsEditing(true);
       setShowActionBtn(!showActionBtn);
     }, 500); // Adjust the delay time to your preference
@@ -17,7 +14,6 @@ export default function List({ active, isEditing, setIsEditing }) {
 
   const handleMouseUp = () => {
     clearTimeout(pressTimer);
-    setIsPressed(false);
   };
 
   return (
@@ -26,10 +22,16 @@ export default function List({ active, isEditing, setIsEditing }) {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-    >
-      <span>
-        {active && <span className="w-2 h-2 bg-red-600 rounded-full" />}
-        <span> Miley Cyrus - Flowers</span>
+      onClick={() => setPlayingId(song.id)}>
+      <span className="flex items-center gap-2">
+        {active && (
+          <span
+            className={`w-2 h-2 rounded-full ${
+              showActionBtn ? "bg-green" : "bg-red-600"
+            }`}
+          />
+        )}
+        <span> {song?.song}</span>
       </span>
       {showActionBtn && (
         <span className="flex items-center gap-5">
@@ -48,13 +50,3 @@ export default function List({ active, isEditing, setIsEditing }) {
     </li>
   );
 }
-
-
-
-
-
-
-
-
-
-

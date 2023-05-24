@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import List from "./list";
+import { PlayerContext } from "../../context/playerContext";
+import { musicList } from "../../data/song";
 
 export default function Playlist() {
   const [isEditing, setIsEditing] = useState(false);
+  const { currentAlbum, currentSong, setCurrentSong } =
+    useContext(PlayerContext);
+
+  console.log(currentAlbum);
+
+  const songs = musicList[currentAlbum]?.songs || [];
+
   return (
     <ul className="flex flex-col gap-1">
       {isEditing && (
@@ -19,13 +28,17 @@ export default function Playlist() {
           />
         </li>
       )}
-      <List setIsEditing={setIsEditing} isEditing={isEditing} />
-      <List setIsEditing={setIsEditing} isEditing={isEditing} />
-      <List setIsEditing={setIsEditing} isEditing={isEditing} />
-      <List setIsEditing={setIsEditing} isEditing={isEditing} active={true} />
-      <List setIsEditing={setIsEditing} isEditing={isEditing} />
-      <List setIsEditing={setIsEditing} isEditing={isEditing} />
-      <List setIsEditing={setIsEditing} isEditing={isEditing} />
+
+      {songs.map((song) => (
+        <List
+          key={song.id}
+          setIsEditing={setIsEditing}
+          isEditing={isEditing}
+          song={song}
+          active={song.id === currentSong}
+          setPlayingId={setCurrentSong}
+        />
+      ))}
     </ul>
   );
 }

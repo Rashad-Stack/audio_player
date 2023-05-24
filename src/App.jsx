@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SettingScreen from "./pages/SettingScreen";
 import { useEffect, useState } from "react";
 import LoginScreen from "./pages/Login";
+import PlayerContextProvider from "./context/playerContext";
 
 function App() {
   const [isLaunched, setIsLaunched] = useState(true);
@@ -17,13 +18,15 @@ function App() {
   return isLaunched ? (
     <LaunchScreen />
   ) : (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/settings" element={<SettingScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
-      </Routes>
-    </Router>
+    <PlayerContextProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/settings" element={<SettingScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+        </Routes>
+      </Router>
+    </PlayerContextProvider>
   );
 }
 

@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { PlayerContext } from "../../context/playerContext";
+import { musicList } from "../../data/song";
 
 export default function Settings() {
   const [isMuted, setIsMuted] = useState(false);
+  const { currentAlbum, currentSong, setCurrentSong } =
+    useContext(PlayerContext);
+
+  const handleNextSong = () => {
+    const songs = musicList[currentAlbum]?.songs || [];
+    if (songs.length > currentSong + 1) {
+      setCurrentSong(currentSong + 1);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-between mt-20">
       <Link
@@ -23,7 +35,9 @@ export default function Settings() {
         <button className="w-16 h-16 transition ease-out transform hover:opacity-50">
           <img src="/images/button-sc.png" alt="setting button" />
         </button>
-        <button className="w-16 h-16 transition ease-out transform hover:opacity-50">
+        <button
+          className="w-16 h-16 transition ease-out transform hover:opacity-50"
+          onClick={handleNextSong}>
           <img src="/images/button-next.png" alt="setting button" />
         </button>
       </div>

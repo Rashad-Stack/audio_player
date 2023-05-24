@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import CircleProgressbar from "./cicleProgressbar";
+import { PlayerContext } from "../../context/playerContext";
 
 export default function AlbumCover({ percentage, time, music }) {
   const [isDeleting, setIsDeleting] = useState(false);
+  const { setCurrentAlbum } = useContext(PlayerContext);
 
   return (
-    <div>
+    <div onClick={() => setCurrentAlbum(music.id - 1)}>
       <CircleProgressbar percentage={percentage} circleWidth="150">
         <div className="relative w-32 h-32 overflow-hidden rounded-full cursor-pointer">
           <img
